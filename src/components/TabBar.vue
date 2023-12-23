@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+const store = useStore()
+
 const handleTabChange = (event: CustomEvent) => {
   console.log(event.target.activeTabIndex)
+  store.switchTab(event.target.activeTabIndex)
 }
 </script>
 

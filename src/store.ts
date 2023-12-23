@@ -11,7 +11,7 @@ export const useStore = defineStore("main", {
     version: versionString,
     isInitialized: false,
     count: 0,
-    activeIndex: 0,
+    activeTabIndex: 0,
   }),
 
   actions: {
@@ -32,7 +32,7 @@ export const useStore = defineStore("main", {
     switchTab(index: number) {
       switch (index) {
         case 0:
-          this.router.push("/index/")
+          this.router.push("/")
           break
         case 1:
           this.router.push("/map/")
@@ -41,7 +41,7 @@ export const useStore = defineStore("main", {
           this.router.push("/mine/")
           break
       }
-      this.activeIndex = index
+      this.activeTabIndex = index
     },
   },
 
