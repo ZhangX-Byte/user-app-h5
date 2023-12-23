@@ -1,28 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
-import IndexPage from '@/pages/IndexPage.vue'
-import DemoPage from '@/pages/DemoPage.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import DemoPage from "@/pages/DemoPage.vue";
+import Index from "@/pages/Index.vue";
 
 const routes = [
   {
-    path: '/',
-    component: IndexPage,
+    path: "/",
+    component: Index,
     meta: {
-      title: 'Vite + Vue + TypeScript + Tailwind Starter Template',
+      title: "Vite + Vue + TypeScript + Tailwind Starter Template",
     },
   },
   {
-    path: '/demo/',
+    path: "/demo/",
     component: DemoPage,
     meta: {
-      title: 'Demo title',
+      title: "Demo title",
     },
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
-export default router
+export default router;
