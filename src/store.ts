@@ -12,6 +12,7 @@ export const useStore = defineStore("main", {
     isInitialized: false,
     count: 0,
     activeTabIndex: 0,
+    token: "",
   }),
 
   actions: {
@@ -22,11 +23,6 @@ export const useStore = defineStore("main", {
 
     increment(value = 1) {
       this.count += value
-    },
-
-    goToDemo(event: Event) {
-      event.preventDefault()
-      this.router.push("/demo/")
     },
 
     switchTab(index: number) {

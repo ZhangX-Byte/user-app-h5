@@ -1,20 +1,41 @@
 import { createRouter, createWebHistory } from "vue-router"
-import DemoPage from "@/pages/DemoPage.vue"
-import Index from "@/pages/Index.vue"
 
 const routes = [
   {
     path: "/",
-    component: Index,
+    component: () => import("@/layouts/MainLayout.vue"),
     meta: {
       title: "钓鱼之旅",
     },
+    children: [
+      {
+        path: "",
+        component: () => import("@/pages/MomentPage.vue"),
+        meta: {
+          title: "首页",
+        },
+      },
+      {
+        path: "/Map",
+        component: () => import("@/pages/MapPage.vue"),
+        meta: {
+          title: "地图",
+        },
+      },
+      {
+        path: "/Mine",
+        component: () => import("@/pages/MinePage.vue"),
+        meta: {
+          title: "我的",
+        },
+      },
+    ],
   },
   {
-    path: "/demo/",
-    component: DemoPage,
+    path: "/Login",
+    component: () => import("@/pages/LoginPage.vue"),
     meta: {
-      title: "Demo title",
+      title: "登录",
     },
   },
 ]
